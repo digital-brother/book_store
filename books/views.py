@@ -1,7 +1,7 @@
-from django.http import JsonResponse
+from django.shortcuts import render
 from django.views import View
 
 
 class BookListView(View):
     def get(self, request):
-        return JsonResponse({'books': []})
+        return render(request, "books/book_list.html", {"books": []})
